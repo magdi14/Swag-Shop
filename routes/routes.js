@@ -1,5 +1,5 @@
 var express = require('express');
-var productCtrl = require('../controllers/productController');
+var productCtrl = require('../controllers/productController'); //importing the product controller
 
 var router = express.Router();
 
