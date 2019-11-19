@@ -2,8 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var routes = require('./routes/routes');
-// var Product = require('./models/product');
-// var WishList = require('./models/wishlist');
 
 var db = mongoose.connect('mongodb://localhost:27017/swag-shop', { useNewUrlParser: true, useUnifiedTopology: true });
 
