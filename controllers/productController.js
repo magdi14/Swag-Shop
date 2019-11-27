@@ -21,7 +21,7 @@ module.exports = {
            }
        });
     },
-    postProduct : function(req, res){
+    AddProduct : function(req, res){
        var product = new Product();
        product.name = req.body.name;
        product.description = req.body.description;
@@ -37,7 +37,7 @@ module.exports = {
     },
     editProduct : function(req, res){
         const requestId = req.params.productId;
-        Product.update({"_id": requestId}, {$set: req.body}, function(error, product){
+        Product.updateOne({"_id": requestId}, {$set: req.body}, function(error, product){
                 if(error){
                     res.send({message: "Somthing went wrong"});
                 }else{
@@ -47,7 +47,7 @@ module.exports = {
     },
     deleteProduct : function(req, res){
     const requestId = req.params.productId;
-    Product.remove({"_id": requestId}, function(error, result){
+    Product.deleteOne({"_id": requestId}, function(error, result){
         if(error){
             res.send({message: "Somthing went wrong while deleting!"});
         }else{
